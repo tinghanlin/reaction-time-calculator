@@ -21,8 +21,8 @@ for i in range(30):
     user_input = raw_input() 
     end_time = time.time()
     react_time = end_time-start_time
-    print("Trial "+str(i+1)+" Reaction Time is "+str(int(round(react_time*1000)))+" milliseconds.\n")
-    res.append(int(round(react_time*1000)))
+    print(f"Trial {i+1} Reaction Time is {int(react_time*1000)} milliseconds.\n")
+    res.append(int(react_time*1000))
     time.sleep(1)
     if i+1 !=30:
         print(colored("Get ready for the next trial!\n", "cyan"))
@@ -30,7 +30,7 @@ for i in range(30):
 
 time.sleep(1)
 #summary of the user's reaction time    
-print("Your average reaction time is "+str(int(round(sum(res) / len(res))))+" milliseconds.")
+print(f"Your average reaction time is {int(sum(res) / len(res))} milliseconds.")
 
 #store the file into csv in unit of milliseconds
 with open('reaction_time_result.csv', 'w') as f: 
@@ -42,4 +42,3 @@ time.sleep(1)
 print(colored("Your reaction time has been recorded.", "cyan"))
 time.sleep(1)
 print(colored("Thank you very much for your participation!", "cyan"))
-
